@@ -25,6 +25,7 @@ $status = isset($_GET["status"]) ? $_GET["status"] : "";
 <?php } ?>
 
 <form action="proses_anggota.php" method="post">
+    <a class="btn" href="data_anggota.php">+ Lihat Data Anggota</a>
     <label for="no_anggota">Nomor Anggota</label>
     <input type="text" id="no_anggota" name="no_anggota">
 
@@ -49,6 +50,8 @@ $status = isset($_GET["status"]) ? $_GET["status"] : "";
     <textarea id="alamat" name="alamat" rows="4"></textarea>
 
     <button type="submit">Simpan</button>
+
+    <a class="btn" href="data_anggota.php">+ Lihat Data Anggota</a>
 </form>
 </body>
 </html>

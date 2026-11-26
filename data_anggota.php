@@ -42,7 +42,7 @@ function kelas_badge($jenis)
         margin: 0;
         padding: 32px 16px;
         background: #f3f6fb;
-        color: #263238;
+        color: #553dab;
     }
     .container { max-width: 1100px; margin: 0 auto; }
 
@@ -60,7 +60,7 @@ function kelas_badge($jenis)
     .btn {
         display: inline-block;
         padding: 10px 18px;
-        background: #1f3864;
+        background: #2f73e9;
         color: #fff;
         text-decoration: none;
         border-radius: 6px;
@@ -89,7 +89,7 @@ function kelas_badge($jenis)
     }
     table { width: 100%; border-collapse: collapse; min-width: 760px; }
     thead th {
-        background: #1f3864;
+        background: #008e40;
         color: #fff;
         text-align: left;
         padding: 12px 14px;
@@ -120,6 +120,18 @@ function kelas_badge($jenis)
     .badge-tendik { background: #fff4e0; color: #ef6c00; }
     .badge-lain { background: #eceff1; color: #546e7a; }
 
+    .btn-hapus {
+        padding: 6px 12px;
+        background: #c0392b;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .btn-hapus:hover { background: #962d22; }
+
     .kosong { text-align: center; padding: 40px 16px; color: #78909c; }
 </style>
 </head>
@@ -147,12 +159,13 @@ function kelas_badge($jenis)
                     <th>No. HP</th>
                     <th>Jenis Anggota</th>
                     <th>Alamat</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
             <?php if ($jumlah_data === 0) { ?>
                 <tr>
-                    <td colspan="7" class="kosong">Belum ada data anggota.</td>
+                    <td colspan="8" class="kosong">Belum ada data anggota.</td>
                 </tr>
             <?php } else {
                 $no = 1;
@@ -169,6 +182,14 @@ function kelas_badge($jenis)
                         </span>
                     </td>
                     <td><?php echo nl2br(htmlspecialchars($baris["alamat"])); ?></td>
+                    <td>
+                        <a class="btn" href="edit_anggota.php?id=<?php echo (int)$baris['id']; ?>">Edit</a>
+                        <form action="hapus_anggota.php" method="POST" style="display:inline;"
+                              onsubmit="return confirm('Anda yakin mau hapus?');">
+                            <input type="hidden" name="id" value="<?php echo (int)$baris['id']; ?>">
+                            <button type="submit" class="btn-hapus">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
             <?php }
             } ?>
