@@ -1,3 +1,6 @@
+//Rifky Luthfi Hanafi
+//250202058
+//TI-2B
 <?php
 // hapus_anggota.php - Menghapus data anggota berdasarkan id (POST)
 require_once __DIR__ . "/koneksi.php";

@@ -1,3 +1,8 @@
+//Rifky Luthfi Hanafi
+//250202058
+//TI-2B
+
+
 <?php
 
 require_once "koneksi.php";
